@@ -1,4 +1,4 @@
-angular.module('nga.filters.humanize', [])
+angular.module('ngost.filters.humanize', [])
     .filter('humanize', [function() {
         function words(input) {
             return input.replace(/^([a-z])|\s+([a-z])/g, function ($1) {

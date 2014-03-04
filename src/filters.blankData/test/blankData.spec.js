@@ -1,7 +1,7 @@
 describe('blankData Filter', function () {
 
     var filter;
-    beforeEach(angular.mock.module('nga.filters.blankData'));
+    beforeEach(angular.mock.module('ngost.filters.blankData'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('blankData');

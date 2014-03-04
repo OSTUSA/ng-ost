@@ -1,7 +1,7 @@
 describe("usPhoneNumber Filter", function () {
 
     var filter;
-    beforeEach(angular.mock.module('nga.filters.usPhoneNumber'));
+    beforeEach(angular.mock.module('ngost.filters.usPhoneNumber'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('usPhoneNumber');

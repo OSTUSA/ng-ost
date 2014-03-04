@@ -1,7 +1,7 @@
 //TODO: Add attributes for specifying busyState string i.e ('loading')
 //TODO: Add attributes for specifying initialState string i.e ('reset')
 
-angular.module('nga.directives.busyButton', [])
+angular.module('ngost.directives.busyButton', [])
     .constant('busyButtonConfig', {
         initialState: 'reset',
         busyState: 'loading'
@@ -10,9 +10,9 @@ angular.module('nga.directives.busyButton', [])
         this.busyState = busyButtonConfig.busyState;
         this.initialState = busyButtonConfig.initialState;
     }])
-    .directive('ngaBusyButton', [function () {
+    .directive('ngostBusyButton', [function () {
         return {
-            require: ['ngaBusyButton'],
+            require: ['ngostBusyButton'],
             controller: 'busyButtonController',
             link: function (scope, element, attrs, ctrls) {
                 var buttonsCtrl = ctrls[0];

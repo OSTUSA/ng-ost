@@ -1,4 +1,4 @@
-angular.module('nga.filters.paged', [])
+angular.module('ngost.filters.paged', [])
     .filter('paged', function () {
         return function (input, start, end, notPaged) {
             if ((!angular.isArray(input) || notPaged) || (start > end)) {

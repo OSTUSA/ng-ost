@@ -1,7 +1,7 @@
 describe("truncate Filter", function () {
 
     var filter;
-    beforeEach(angular.mock.module('nga.filters.truncate'));
+    beforeEach(angular.mock.module('ngost.filters.truncate'));
 
 
     beforeEach(inject(function ($filter) {

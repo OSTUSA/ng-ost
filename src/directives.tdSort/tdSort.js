@@ -1,6 +1,6 @@
 //TODO: Add attributes for specifiying Sort Icons or text
-angular.module('nga.directives.tdSort', [])
-    .directive('ngaTdSort', [function () {
+angular.module('ngost.directives.tdSort', [])
+    .directive('ngostTdSort', [function () {
         return {
             restrict: 'E',
             replace: true,

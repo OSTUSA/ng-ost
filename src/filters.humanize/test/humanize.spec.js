@@ -1,6 +1,6 @@
 describe('Humanize Filter', function () {
     var filter;
-    beforeEach(angular.mock.module('nga.filters.humanize'));
+    beforeEach(angular.mock.module('ngost.filters.humanize'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('humanize');

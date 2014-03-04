@@ -1,4 +1,4 @@
-angular.module('nga.filters.yesNo', [])
+angular.module('ngost.filters.yesNo', [])
     .filter('yesNo', [function () {
         return function (input, forceFalse) {
 

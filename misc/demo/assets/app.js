@@ -1,4 +1,4 @@
-angular.module('ngaDemoApp', ['nga', 'ui.bootstrap','plunker', 'ngTouch', 'ngRoute']);
+angular.module('ngostDemoApp', ['ngost', 'ui.bootstrap','plunker', 'ngTouch', 'ngRoute']);
 
 function MainCtrl($scope, $modal) {
   $scope.showDownloadModal = function() {

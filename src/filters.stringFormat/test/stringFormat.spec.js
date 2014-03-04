@@ -1,7 +1,7 @@
 describe("stringFormat Filter", function () {
 
     var filter;
-    beforeEach(angular.mock.module('nga.filters.stringFormat'));
+    beforeEach(angular.mock.module('ngost.filters.stringFormat'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('stringFormat');

@@ -14,8 +14,8 @@ After downloading dependencies (or better yet, referencing them from your favour
 https://github.com/ebertsch/angular-ally/tree/gh-pages#build-files
 Don't worry, if you are not sure which file to take, opt for `angular-ally-[version].min.js`.
 
-When you are done downloading all the dependencies and project files the only remaining part is to add dependencies on the `nga` AngularJS module:
+When you are done downloading all the dependencies and project files the only remaining part is to add dependencies on the `ngost` AngularJS module:
 
 ```javascript
-angular.module('myModule', ['nga']);
+angular.module('myModule', ['ngost']);
 ```
