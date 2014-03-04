@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngaDemoApp" id="top">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>A Set of common and useful extensions to AngularJS</title>
+    <meta name="description"
+          content="A Set of common and useful extensions to AngularJS. Widgets: <% demoModules.forEach(function(module) { %><%= module.displayName %>, <% }); %>">
+    <!--<meta name="google-site-verification" content="7lc5HyceLDqpV_6oNHteYFfxDJH7-S3DwnJKtNUKcRg" />-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/<%= ngversion %>/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/<%= ngversion %>/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/<%= ngversion %>/angular-touch.js"></script>
+    <script src="assets/ui-bootstrap-tpls-0.10.0.min.js"></script>
+    <script src="assets/plunker.js"></script>
+    <script src="<%= filename %>-<%= pkg.version %>.js"></script>
+    <script src="assets/app.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/<%= bsversion %>/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/rainbow.css"/>
+    <link rel="stylesheet" href="assets/demo.css"/>
+    <link rel="author" href="https://github.com/ebertsch/Angular-Ally/graphs/contributors">
+</head>
+<body class="ng-cloak" ng-controller="MainCtrl">
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" href="#">Angular Ally</a>
+            </div>
+            <nav class="hidden-xs">
+                <ul class="nav navbar-nav">
+                    <a href="#top" role="button" class="navbar-brand">
+                        Angular Ally
+                    </a>
+                    <li class="dropdown">
+                        <a role="button" class="dropdown-toggle">
+                            Filters <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <% demoModules.forEach(function(module) { if (module.moduleType == "filter") { %>
+                            <li><a href="#<%= module.name %>"><%= module.displayName %></a></li>
+                            <% } }); %>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a role="button" class="dropdown-toggle">
+                            Directives <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Coming Soon</a></li>
+                            <% demoModules.forEach(function(module) { if (module.ModuleType == "directive") { %>
+                                <li><a href="#<%= module.name %>"><%= module.displayName %></a></li>
+                            <% } }); %>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a role="button" class="dropdown-toggle">
+                            Services <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Coming Soon</a></li>
+                            <% demoModules.forEach(function(module) { if (module.ModuleType == "service") { %>
+                            <li><a href="#<%= module.name %>"><%= module.displayName %></a>
+                            </li>
+                            <% } }); %>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a role="button" class="dropdown-toggle">
+                            Utility Modules <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Coming Soon</a></li>
+                            <% demoModules.forEach(function(module) { if (module.ModuleType == "module") { %>
+                            <li><a href="#<%= module.name %>"><%= module.displayName %></a>
+                            </li>
+                            <% } }); %>
+                        </ul>
+                    </li>
+                    <li><a href="#getting_started">Getting started</a></li>
+                </ul>
+            </nav>
+            <nav class="visible-xs" collapse="!isCollapsed">
+                <ul class="nav navbar-nav">
+                    <li><a href="#getting_started" ng-click="isCollapsed = !isCollapsed">Getting started</a></li>
+                    <li><a href="#Eextensions_small" ng-click="isCollapsed = !isCollapsed">Extensions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="header-placeholder"></div>
+<div role="main">
+    <header class="bs-header text-center" id="overview">
+        <div class="container">
+            <h1>
+                Angular Ally
+            </h1>
+
+            <p>Common and useful <a href="http://angularjs.org">AngularJS</a> filters, directives, services, factories
+                and modules</p>
+
+            <p>
+                <a class="btn btn-outline-inverse btn-lg" href="https://github.com/ebertsch/Angular-Ally/"><i
+                        class="icon-github"></i>Code on Github</a>
+                <a class="btn btn-outline-inverse btn-lg" ng-click="showDownloadModal()">
+                    <i class="glyphicon glyphicon-download-alt"></i> Download
+                    <small>(<%= pkg.version%>)</small>
+                </a>
+            </p>
+        </div>
+        <div class="bs-social container">
+            <ul class="bs-social-buttons">
+                <li>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=ebertsch&repo=angular-ally&type=watch&count=true"
+                            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                </li>
+                <li>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=ebertsch&repo=angular-ally&type=fork&count=true"
+                            allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <section class="bs-sidebar visible-xs" id="extensions_small">
+                    <ul class="nav bs-sidenav">
+                        <li><a href="#"><strong>Directives</strong></a></li>
+                        <% demoModules.forEach(function(module) { %>
+                        <li><a href="#<%= module.name %>"><%= module.displayName %></a></li>
+                        <% }); %>
+                    </ul>
+                </section>
+
+                <section id="getting_started">
+                    <div class="page-header">
+                        <h1>Getting started</h1>
+                    </div>
+                    <h3>Dependencies</h3>
+
+                    <p>
+                        This repository contains a set of <strong>native AngularJS extensions</strong>. The <strong>only
+                        required dependencies</strong> are:
+                    </p>
+                    <ul>
+                        <li><a href="http://angularjs.org" target="_blank">AngularJS</a> (requires AngularJS 1.2.x,
+                            tested with <%= ngversion %>)
+                        </li>
+                        <li><a href="http://getbootstrap.com" target="_blank">Bootstrap</a> (tested with version <%=
+                            bsversion %>).
+                            This version of the library (<%= pkg.version%>) works only with Bootstrap in version 3.x.
+                        </li>
+                    </ul>
+                    <h3>Files to download</h3>
+
+                    <p>
+                        Build files for all extensions are distributed in several flavours: minified for production
+                        usage, un-minified
+                        for development. All the options are described and can be
+                        <a href="https://github.com/ebertsch/Angular-Ally/tree/gh-pages">downloaded from here</a>.
+                    </p>
+
+                    <h3>Installation</h3>
+
+                    <p>As soon as you've got all the files downloaded and included in your page you just need to declare
+                        a dependency on the <code>nga</code> <a href="http://docs.angularjs.org/guide/module">module</a>:<br />
+                        <pre><code>angular.module('myModule', ['nga']);</code></pre>
+                    </p>
+
+                </section>
+                <% demoModules.forEach(function(module) { %>
+                <section id="<%= module.name %>">
+                    <div class="page-header">
+
+                        <h1>
+                            <small>(<%= module.moduleType %>) </small>
+                            <%= module.displayName %>
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ebertsch/Angular-Ally/tree/master/src/<%= module.name %>"> in nga.<%= module.name %></a>
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 show-grid">
+                            <%= module.docs.html %>
+                        </div>
+                        <div class="col-md-6" ng-non-bindable>
+                            <%= module.docs.md %>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row code">
+                        <div class="col-md-12" ng-controller="PlunkerCtrl">
+                            <!--<div class="pull-right">-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('<%= ngversion%>', '<%= bsversion %>', '<%= pkg.version%>', '<%= module.name %>')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--</div>-->
+                            <tabset>
+                                <tab heading="Markup">
+                                    <div plunker-content="markup">
+                                        <pre ng-non-bindable><code data-language="html"><%- module.docs.html %></code></pre>
+                                    </div>
+                                </tab>
+                                <tab heading="JavaScript">
+                                    <div plunker-content="javascript">
+                                        <pre ng-non-bindable><code data-language="javascript"><%- module.docs.js %></code></pre>
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </section>
+                <script><%= module.docs.js %></script>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.main -->
+<footer class="footer">
+    <div class="container">
+        <p>Designed and built by <a href="https://github.com/ebertsch" target="_blank">Ezra Bertsch</a> and <a
+                href="https://github.com/ebertsch/Angular-Ally/graphs/contributors" target="_blank">contributors</a>.
+        </p>
+
+        <p>Code licensed under <a href="https://github.com/ebertsch/Angular-Ally/master/LICENSE"><%= pkg.license %>
+            License</a>.</p>
+    </div>
+</footer>
+<script src="assets/rainbow.js"></script>
+<script src="assets/rainbow-generic.js"></script>
+<script src="assets/rainbow-javascript.js"></script>
+<script src="assets/rainbow-html.js"></script>
+<script type="text/ng-template" id="downloadModal.html">
+    <div class="modal-header"><h4 class="modal-title">Download Angular Ally</h4></div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-3 control-label"><strong>Build</strong></label>
+
+                <div class="col-sm-9">
+              <span class="btn-group">
+                <button type="button" class="btn btn-default" ng-model="options.minified" btn-radio="true">Minified
+                </button>
+                <button type="button" class="btn btn-default" ng-model="options.minified" btn-radio="false">
+                    Uncompressed
+                </button>
+              </span>
+                    <small class="help-block">Use <b>Minified</b> version in your deployed application.
+                        <b>Uncompressed</b> source code is useful only for debugging and development purpose.
+                    </small>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-default" ng-click="cancel()">Close</a>
+        <a class="btn btn-primary" ng-href="{{download('<%= pkg.version%>')}}" download><i
+                class="glyphicon glyphicon-download-alt"></i> Download <%= pkg.version %></a>
+    </div>
+</script>
+
+<!--<script type="text/javascript">-->
+
+<!--var _gaq = _gaq || [];-->
+<!--_gaq.push(['_setAccount', 'UA-37467169-1']);-->
+<!--_gaq.push(['_trackPageview']);-->
+
+<!--(function() {-->
+<!--var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;-->
+<!--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
+<!--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);-->
+<!--})();-->
+
+<!--</script>-->
+<script src="assets/smoothscroll-angular-custom.js"></script>
+</body>
+</html>
