@@ -1,1 +1,0 @@
-Used to provide a quick alternative to string format on the client side in tempaltes
