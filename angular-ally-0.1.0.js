@@ -1,12 +1,12 @@
 /*
- * ng-ost
- * http://ostusa.github.io/ng-ost/
+ * angular-ally
+ * http://angular-ally.github.io
 
- * Version: 0.1.0 - 2014-03-04
- * License:
+ * Version: 0.1.0 - 2014-02-04
+ * License: 
  */
-angular.module("ngost", ["ngost.filters.blankData","ngost.filters.prettyDate","ngost.filters.stringFormat","ngost.filters.truncate","ngost.filters.usPhoneNumber","ngost.filters.yesNo"]);
-angular.module('ngost.filters.blankData', [])
+angular.module("nga", ["nga.filters.blankData","nga.filters.prettyDate","nga.filters.stringFormat","nga.filters.truncate","nga.filters.usPhoneNumber","nga.filters.yesNo"]);
+angular.module('nga.filters.blankData', [])
     .filter('blankData', [function () {
         return function (input, placeholder) {
             if (!input) {
@@ -17,7 +17,7 @@ angular.module('ngost.filters.blankData', [])
         };
     }]);
 
-angular.module('ngost.filters.prettyDate', [])
+angular.module('nga.filters.prettyDate', [])
     .filter('prettyDate', [function () {
         return function (input) {
 
@@ -67,7 +67,7 @@ angular.module('ngost.filters.prettyDate', [])
         };
     }]);
 
-angular.module('ngost.filters.stringFormat', [])
+angular.module('nga.filters.stringFormat', [])
     .filter('stringFormat', [function () {
         return function (input, replacements) {
 
@@ -94,7 +94,7 @@ angular.module('ngost.filters.stringFormat', [])
             return formatted;
         };
     }]);
-angular.module('ngost.filters.truncate', [])
+angular.module('nga.filters.truncate', [])
     .filter('truncate', [function () {
         return function (input, length, end) {
             if (!input || !angular.isString(input)) {
@@ -121,7 +121,7 @@ angular.module('ngost.filters.truncate', [])
         };
     }]);
 
-angular.module('ngost.filters.usPhoneNumber', [])
+angular.module('nga.filters.usPhoneNumber', [])
     .filter('usPhoneNumber', [function () {
         return function (input, showCountryCode) {
             if (!input) {
@@ -150,7 +150,7 @@ angular.module('ngost.filters.usPhoneNumber', [])
         };
     }]);
 
-angular.module('ngost.filters.yesNo', [])
+angular.module('nga.filters.yesNo', [])
     .filter('yesNo', [function () {
         return function (input, forceFalse) {
 

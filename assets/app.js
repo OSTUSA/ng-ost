@@ -1,4 +1,4 @@
-angular.module('ngostDemoApp', ['ngost', 'ui.bootstrap','plunker', 'ngTouch']);
+angular.module('ngaDemoApp', ['nga', 'ui.bootstrap','plunker', 'ngTouch']);
 
 function MainCtrl($scope, $modal) {
   $scope.showDownloadModal = function() {
@@ -17,15 +17,13 @@ var DownloadCtrl = function($scope, $modalInstance) {
   $scope.download = function (version) {
     var options = $scope.options;
 
-    var downloadUrl = ['ng-ost-'];
+    var downloadUrl = ['angular-ally-'];
 
     downloadUrl.push(version);
     if (options.minified) {
       downloadUrl.push('.min');
     }
     downloadUrl.push('.js');
-
-      debugger
 
     return downloadUrl.join('');
   };
