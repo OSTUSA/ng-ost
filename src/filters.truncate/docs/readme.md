@@ -1,0 +1,1 @@
+Used to truncate a string to a specified length
