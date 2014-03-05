@@ -15,5 +15,5 @@ Don't worry, if you are not sure which file to take, opt for `ng-ost-[version].m
 When you are done downloading all the dependencies and project files the only remaining part is to add dependencies on the `nga` AngularJS module:
 
 ```javascript
-angular.module('myModule', ['nga']);
+angular.module('myModule', ['ngOst']);
 ```
