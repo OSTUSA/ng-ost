@@ -1,7 +1,7 @@
 describe('paged Filter', function () {
 
     var filter;
-    beforeEach(angular.mock.module('nga.filters.paged'));
+    beforeEach(angular.mock.module('ngOst.filters.paged'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('paged');

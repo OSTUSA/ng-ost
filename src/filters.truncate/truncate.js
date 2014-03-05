@@ -1,4 +1,4 @@
-angular.module('nga.filters.truncate', [])
+angular.module('ngOst.filters.truncate', [])
     .filter('truncate', [function () {
         return function (input, length, end) {
             if (!input || !angular.isString(input)) {

@@ -1,7 +1,7 @@
 describe("prettyDate Filter", function () {
 
     var filter;
-    beforeEach(angular.mock.module('nga.filters.prettyDate'));
+    beforeEach(angular.mock.module('ngOst.filters.prettyDate'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('prettyDate');

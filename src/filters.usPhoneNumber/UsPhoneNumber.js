@@ -1,4 +1,4 @@
-angular.module('nga.filters.usPhoneNumber', [])
+angular.module('ngOst.filters.usPhoneNumber', [])
     .filter('usPhoneNumber', [function () {
         return function (input, showCountryCode) {
             if (!input) {

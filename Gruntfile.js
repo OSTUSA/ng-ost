@@ -19,11 +19,11 @@ module.exports = function (grunt) {
         modules: [],//to be filled in by build task
         pkg: grunt.file.readJSON('package.json'),
         dist: 'dist',
-        filename: 'angular-ally',
+        filename: 'ng-ost',
         filenamecustom: '<%= filename %>-custom',
         meta: {
-            modules: 'angular.module("nga", [<%= srcModules %>]);',
-            all: 'angular.module("nga", [<%= srcModules %>]);',
+            modules: 'angular.module("ngOst", [<%= srcModules %>]);',
+            all: 'angular.module("ngOst", [<%= srcModules %>]);',
             banner: ['/*',
                 ' * <%= pkg.name %>',
                 ' * <%= pkg.homepage %>\n',
@@ -197,7 +197,7 @@ module.exports = function (grunt) {
 
         var module = {
             name: name,
-            moduleName: enquote('nga.' + name),
+            moduleName: enquote('ngOst.' + name),
             moduleType: (name.split(".")[0]).substring(0, (name.split(".")[0]).length - 1),
             displayName: ucwords(breakup(name, ' ').replace('filters.', '')),
             srcFiles: grunt.file.expand('src/' + name + '/*.js'),
@@ -231,8 +231,8 @@ module.exports = function (grunt) {
                 var depArrayEnd = contents.indexOf(']', depArrayStart);
                 var dependencies = contents.substring(depArrayStart + 1, depArrayEnd);
                 dependencies.split(',').forEach(function (dep) {
-                    if (dep.indexOf('nga.') > -1) {
-                        var depName = dep.trim().replace('nga.', '').replace(/['"]/g, '');
+                    if (dep.indexOf('ngOst.') > -1) {
+                        var depName = dep.trim().replace('ngOst.', '').replace(/['"]/g, '');
                         if (deps.indexOf(depName) < 0) {
                             deps.push(depName);
                             //Get dependencies for this new dependency

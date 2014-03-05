@@ -1,7 +1,7 @@
 //TODO: Add attributes for specifying input classes
 //TODO: Add attributes for specifying search Icon or Text
-angular.module('nga.directives.tdSearch', [])
-    .directive('ngaTdSearch', [function () {
+angular.module('ngOst.directives.tdSearch', [])
+    .directive('ngOstTdSearch', [function () {
         return {
             restrict:'E',
             replace: true,

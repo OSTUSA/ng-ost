@@ -1,4 +1,4 @@
-angular.module('nga.filters.stringFormat', [])
+angular.module('ngOst.filters.stringFormat', [])
     .filter('stringFormat', [function () {
         return function (input, replacements) {
 

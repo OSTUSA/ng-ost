@@ -1,13 +1,13 @@
-angular.module('nga.directives.confirmButton', [])
+angular.module('ngOst.directives.confirmButton', [])
     .constant('confirmButtonConfig', {
         message: 'Are you sure?'
     })
     .controller('confirmButtonController', ['confirmButtonConfig', function (confirmButtonConfig) {
         this.message = confirmButtonConfig.message || 'Are you sure?';
     }])
-    .directive('ngaConfirmButton', [function () {
+    .directive('ngOstConfirmButton', [function () {
         return {
-            require: ['ngaConfirmButton'],
+            require: ['ngOstConfirmButton'],
             controller: 'confirmButtonController',
             link: function (scope, element, attrs, ctrls) {
                 var buttonsCtrl = ctrls[0];

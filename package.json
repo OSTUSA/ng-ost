@@ -1,7 +1,7 @@
 {
-    "author": "https://github.com/ebertsch",
-    "name": "angular-ally",
-    "homepage": "http://angular-ally.github.io",
+    "author": "https://github.com/ostusa",
+    "name": "ng-ost",
+    "homepage": "http://ostusa.github.io/ng-ost",
     "version": "0.1.1",
     "private": true,
     "scripts": {

@@ -1,4 +1,4 @@
-angular.module('nga.filters.prettyDate', [])
+angular.module('ngOst.filters.prettyDate', [])
     .filter('prettyDate', [function () {
         return function (input) {
 

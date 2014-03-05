@@ -1,7 +1,7 @@
 describe("yesNo Filter", function () {
 
     var filter;
-    beforeEach(angular.mock.module('nga.filters.yesNo'));
+    beforeEach(angular.mock.module('ngOst.filters.yesNo'));
 
     beforeEach(inject(function ($filter) {
         filter = $filter('yesNo');
