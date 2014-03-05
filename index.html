@@ -1,48 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="ngaDemoApp" id="top">
+<html lang="en" ng-app="ngOstDemoApp" id="top">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>A Set of common and useful extensions to AngularJS</title>
-    <meta name="description" content="A Set of common and useful extensions to AngularJS. Widgets: Blank Data, Pretty Date, String Format, Truncate, Us Phone Number, ">
+    <meta name="description"
+          content="A Set of common and useful extensions to AngularJS. Widgets: Blank Data, Humanize, Paged, Pretty Date, String Format, Truncate, Us Phone Number, Yes No, ">
     <!--<meta name="google-site-verification" content="7lc5HyceLDqpV_6oNHteYFfxDJH7-S3DwnJKtNUKcRg" />-->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-touch.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-touch.js"></script>
     <script src="assets/ui-bootstrap-tpls-0.10.0.min.js"></script>
     <script src="assets/plunker.js"></script>
-    <script src="angular-ally-0.1.0.js"></script>
+    <script src="ng-ost-0.1.1.js"></script>
     <script src="assets/app.js"></script>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="assets/rainbow.css"/>
     <link rel="stylesheet" href="assets/demo.css"/>
-    <link rel="author" href="https://github.com/ebertsch/Angular-Ally/graphs/contributors">
+    <link rel="author" href="https://github.com/ostusa/ng-ost/graphs/contributors">
 </head>
 <body class="ng-cloak" ng-controller="MainCtrl">
 <header class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-3" ng-click="isCollapsed = !isCollapsed">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand visible-xs" href="#">Angular Ally</a>
+                <a class="navbar-brand visible-xs" href="#">ng-ost</a>
             </div>
             <nav class="hidden-xs">
                 <ul class="nav navbar-nav">
                     <a href="#top" role="button" class="navbar-brand">
-                        Angular Ally
+                        ng-ost
                     </a>
                     <li class="dropdown">
                         <a role="button" class="dropdown-toggle">
-                            Extensions <b class="caret"></b>
+                            Filters <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#filters.blankData">Blank Data</a></li><li><a href="#filters.prettyDate">Pretty Date</a></li><li><a href="#filters.stringFormat">String Format</a></li><li><a href="#filters.truncate">Truncate</a></li><li><a href="#filters.usPhoneNumber">Us Phone Number</a></li>
+                            
+                            <li><a href="#filters.blankData">Blank Data</a></li>
+                            
+                            <li><a href="#filters.humanize">Humanize</a></li>
+                            
+                            <li><a href="#filters.paged">Paged</a></li>
+                            
+                            <li><a href="#filters.prettyDate">Pretty Date</a></li>
+                            
+                            <li><a href="#filters.stringFormat">String Format</a></li>
+                            
+                            <li><a href="#filters.truncate">Truncate</a></li>
+                            
+                            <li><a href="#filters.usPhoneNumber">Us Phone Number</a></li>
+                            
+                            <li><a href="#filters.yesNo">Yes No</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a role="button" class="dropdown-toggle">
+                            Directives <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Coming Soon</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a role="button" class="dropdown-toggle">
+                            Services <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Coming Soon</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a role="button" class="dropdown-toggle">
+                            Utility Modules <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Coming Soon</a></li>
+                            
                         </ul>
                     </li>
                     <li><a href="#getting_started">Getting started</a></li>
@@ -62,26 +108,29 @@
     <header class="bs-header text-center" id="overview">
         <div class="container">
             <h1>
-                Angular Ally
+                ng-ost
             </h1>
 
-            <p>Common and useful <a href="http://angularjs.org">AngularJS</a> filters, directives, services, factories and modules</p>
+            <p>Common and useful <a href="http://angularjs.org">AngularJS</a> filters, directives, services, factories
+                and modules</p>
 
             <p>
-                <a class="btn btn-outline-inverse btn-lg" href="https://github.com/ebertsch/Angular-Ally/"><i class="icon-github"></i>Code on Github</a>
+                <a class="btn btn-outline-inverse btn-lg" href="https://github.com/ostusa/ng-ost/"><i
+                        class="icon-github"></i>Code on Github</a>
                 <a class="btn btn-outline-inverse btn-lg" ng-click="showDownloadModal()">
-                    <i class="glyphicon glyphicon-download-alt"></i> Download <small>(0.1.0)</small>
+                    <i class="glyphicon glyphicon-download-alt"></i> Download
+                    <small>(0.1.1)</small>
                 </a>
             </p>
         </div>
         <div class="bs-social container">
             <ul class="bs-social-buttons">
                 <li>
-                    <iframe src="http://ghbtns.com/github-btn.html?user=ebertsch&repo=angular-ally&type=watch&count=true"
+                    <iframe src="http://ghbtns.com/github-btn.html?user=ostusa&repo=ng-ost&type=watch&count=true"
                             allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
                 </li>
                 <li>
-                    <iframe src="http://ghbtns.com/github-btn.html?user=ebertsch&repo=angular-ally&type=fork&count=true"
+                    <iframe src="http://ghbtns.com/github-btn.html?user=ostusa&repo=ng-ost&type=fork&count=true"
                             allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
                 </li>
             </ul>
@@ -96,6 +145,10 @@
                         
                         <li><a href="#filters.blankData">Blank Data</a></li>
                         
+                        <li><a href="#filters.humanize">Humanize</a></li>
+                        
+                        <li><a href="#filters.paged">Paged</a></li>
+                        
                         <li><a href="#filters.prettyDate">Pretty Date</a></li>
                         
                         <li><a href="#filters.stringFormat">String Format</a></li>
@@ -103,6 +156,8 @@
                         <li><a href="#filters.truncate">Truncate</a></li>
                         
                         <li><a href="#filters.usPhoneNumber">Us Phone Number</a></li>
+                        
+                        <li><a href="#filters.yesNo">Yes No</a></li>
                         
                     </ul>
                 </section>
@@ -112,87 +167,183 @@
                         <h1>Getting started</h1>
                     </div>
                     <h3>Dependencies</h3>
+
                     <p>
-                        This repository contains a set of <strong>native AngularJS extensions</strong>. The <strong>only required dependencies</strong> are:
+                        This repository contains a set of <strong>native AngularJS extensions</strong>. The <strong>only
+                        required dependencies</strong> are:
                     </p>
                     <ul>
-                        <li><a href="http://angularjs.org" target="_blank">AngularJS</a> (requires AngularJS 1.2.x, tested with 1.2.10)</li>
+                        <li><a href="http://angularjs.org" target="_blank">AngularJS</a> (requires AngularJS 1.2.x,
+                            tested with 1.2.10)
+                        </li>
                         <li><a href="http://getbootstrap.com" target="_blank">Bootstrap</a> (tested with version 3.0.3).
-                            This version of the library (0.1.0) works only with Bootstrap in version 3.x.
+                            This version of the library (0.1.1) works only with Bootstrap in version 3.x.
                         </li>
                     </ul>
                     <h3>Files to download</h3>
+
                     <p>
-                        Build files for all extensions are distributed in several flavours: minified for production usage, un-minified
+                        Build files for all extensions are distributed in several flavours: minified for production
+                        usage, un-minified
                         for development. All the options are described and can be
-                        <a href="https://github.com/ebertsch/Angular-Ally/tree/gh-pages">downloaded from here</a>.
+                        <a href="https://github.com/ostusa/ng-ost/tree/gh-pages">downloaded from here</a>.
                     </p>
 
                     <h3>Installation</h3>
+
                     <p>As soon as you've got all the files downloaded and included in your page you just need to declare
-                        a dependency on the <code>nga</code> <a href="http://docs.angularjs.org/guide/module">module</a>:<br>
-                    <pre><code>angular.module('myModule', ['nga']);</code></pre>
+                        a dependency on the <code>ngOst</code> <a href="http://docs.angularjs.org/guide/module">module</a>:<br />
+                        <pre><code>angular.module('myModule', ['ngOst']);</code></pre>
                     </p>
 
                 </section>
                 
                 <section id="filters.blankData">
                     <div class="page-header">
-                        <h1>Blank Data<small>
-                            (<a target="_blank" href="https://github.com/ebertsch/Angular-Ally/tree/master/src/filters.blankData">nga.filters.blankData</a>)
-                        </small></h1>
+
+                        <h1>
+                            <small>(filter) </small>
+                            Blank Data
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.blankData"> in ngOst.filters.blankData</a>
+                            </small>
+                        </h1>
                     </div>
                     <div class="row">
                         <div class="col-md-6 show-grid">
                             <table class="table table-bordered" ng-controller="blankDataDemoCtrl">
+    <thead>
     <tr>
-        <td>Value 1</td>
-        <td class="text-right">Value 2</td>
+        <th>Value</th>
+        <th>Argument</th>
+        <th>Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{values.stringValue}}</td>
+        <td></td>
+        <td class="text-right">{{values.stringValue | blankData}}</td>
     </tr>
     <tr>
-        <td>{{data.value1 | blankData}}</td>
-        <td class="text-right">{{data.value2 | blankData}}</td>
+        <td><i>null</i> value</td>
+        <td>"NULL VALUE"</td>
+        <td class="text-right">{{values.nullValue | blankData:"NULL VALUE"}}</td>
     </tr>
     <tr>
-        <td>{{data.value1 | blankData:"N/A"}}</td>
-        <td class="text-right">{{data.value2 | blankData:"N/A"}}</td>
+        <td><i>null</i> value</td>
+        <td></td>
+        <td class="text-right">{{values.nullValue | blankData}}</td>
     </tr>
+    <tr>
+        <td><i>undefined</i> value</td>
+        <td>"N/A"</td>
+        <td class="text-right">{{values.undefinedValue | blankData:"N/A"}}</td>
+    </tr>
+    <tr>
+        <td>{{values.numericValue}}</td>
+        <td>"NO DATA"</td>
+        <td class="text-right">{{values.numericValue | blankData:"NO DATA"}}</td>
+    </tr>
+    <tr>
+        <td>{{values.zero}}</td>
+        <td>"NO DATA"</td>
+        <td class="text-right">{{values.zero | blankData:"NO DATA"}}</td>
+    </tr>
+    </tbody>
 </table>
                         </div>
-                        <div class="col-md-6">
-                            <p>This is used to provide default values when a value is not present.</p>
+                        <div class="col-md-6" ng-non-bindable>
+                            <h3>Description</h3>
+
+<p>Formats a value to display a placeholder when a value is <code>null</code> or <code>undefined</code></p>
+
+<h3>Usage</h3>
+
+<h4>In HTML Template Binding</h4>
+
+<p><code>
+{{ expression | blankData[:placeholder] }}
+</code></p>
+
+<h4>In JavaScript</h4>
+
+<p><code>
+$filter('blankData')(expression[, placeholder]);
+</code></p>
+
+<h5>Parameters</h5>
+
+<p><strong>expression</strong> - <code>value</code> - input to filter</p>
+
+<p><em>placeholder (optional)</em> - <code>string</code> - placeholder value to be displayed.</p>
+
+<h5>Returns</h5>
+
+<p><code>string</code>  Formatted string.</p>
                         </div>
                     </div>
                     <hr>
                     <div class="row code">
                         <div class="col-md-12" ng-controller="PlunkerCtrl">
                             <!--<div class="pull-right">-->
-                                <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.0', 'filters.blankData')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.blankData')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
                             <!--</div>-->
                             <tabset>
                                 <tab heading="Markup">
                                     <div plunker-content="markup">
                                         <pre ng-non-bindable><code data-language="html">&lt;table class=&quot;table table-bordered&quot; ng-controller=&quot;blankDataDemoCtrl&quot;&gt;
+    &lt;thead&gt;
     &lt;tr&gt;
-        &lt;td&gt;Value 1&lt;/td&gt;
-        &lt;td class=&quot;text-right&quot;&gt;Value 2&lt;/td&gt;
+        &lt;th&gt;Value&lt;/th&gt;
+        &lt;th&gt;Argument&lt;/th&gt;
+        &lt;th&gt;Output&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;{{values.stringValue}}&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;{{values.stringValue | blankData}}&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;{{data.value1 | blankData}}&lt;/td&gt;
-        &lt;td class=&quot;text-right&quot;&gt;{{data.value2 | blankData}}&lt;/td&gt;
+        &lt;td&gt;&lt;i&gt;null&lt;/i&gt; value&lt;/td&gt;
+        &lt;td&gt;&quot;NULL VALUE&quot;&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;{{values.nullValue | blankData:&quot;NULL VALUE&quot;}}&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-        &lt;td&gt;{{data.value1 | blankData:&quot;N/A&quot;}}&lt;/td&gt;
-        &lt;td class=&quot;text-right&quot;&gt;{{data.value2 | blankData:&quot;N/A&quot;}}&lt;/td&gt;
+        &lt;td&gt;&lt;i&gt;null&lt;/i&gt; value&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;{{values.nullValue | blankData}}&lt;/td&gt;
     &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;i&gt;undefined&lt;/i&gt; value&lt;/td&gt;
+        &lt;td&gt;&quot;N/A&quot;&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;{{values.undefinedValue | blankData:&quot;N/A&quot;}}&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;{{values.numericValue}}&lt;/td&gt;
+        &lt;td&gt;&quot;NO DATA&quot;&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;{{values.numericValue | blankData:&quot;NO DATA&quot;}}&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;{{values.zero}}&lt;/td&gt;
+        &lt;td&gt;&quot;NO DATA&quot;&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;{{values.zero | blankData:&quot;NO DATA&quot;}}&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
                                     </div>
                                 </tab>
                                 <tab heading="JavaScript">
                                     <div plunker-content="javascript">
                                         <pre ng-non-bindable><code data-language="javascript">function blankDataDemoCtrl($scope) {
-    $scope.data = {
-        &#x27;value1&#x27;:&#x27;Value 1 String&#x27;
+    $scope.values = {
+        &#x27;stringValue&#x27;:&#x27;Value 1&#x27;,
+        &#x27;nullValue&#x27;: null,
+        &quot;numericValue&quot;: 1,
+        &quot;zero&quot;: 0
     };
 }
 </code></pre>
@@ -203,17 +354,134 @@
                     </div>
                 </section>
                 <script>function blankDataDemoCtrl($scope) {
-    $scope.data = {
-        'value1':'Value 1 String'
+    $scope.values = {
+        'stringValue':'Value 1',
+        'nullValue': null,
+        "numericValue": 1,
+        "zero": 0
     };
+}
+</script>
+                
+                <section id="filters.humanize">
+                    <div class="page-header">
+
+                        <h1>
+                            <small>(filter) </small>
+                            Humanize
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.humanize"> in ngOst.filters.humanize</a>
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 show-grid">
+                            
+<div ng-controller="humanizeDemoCtrl">
+
+</div>
+                        </div>
+                        <div class="col-md-6" ng-non-bindable>
+                            <h3>Description</h3>
+
+<p>Formats a value to be a human readable string.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row code">
+                        <div class="col-md-12" ng-controller="PlunkerCtrl">
+                            <!--<div class="pull-right">-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.humanize')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--</div>-->
+                            <tabset>
+                                <tab heading="Markup">
+                                    <div plunker-content="markup">
+                                        <pre ng-non-bindable><code data-language="html">
+&lt;div ng-controller=&quot;humanizeDemoCtrl&quot;&gt;
+
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </tab>
+                                <tab heading="JavaScript">
+                                    <div plunker-content="javascript">
+                                        <pre ng-non-bindable><code data-language="javascript">function humanizeDemoCtrl($scope) {
+}
+</code></pre>
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </section>
+                <script>function humanizeDemoCtrl($scope) {
+}
+</script>
+                
+                <section id="filters.paged">
+                    <div class="page-header">
+
+                        <h1>
+                            <small>(filter) </small>
+                            Paged
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.paged"> in ngOst.filters.paged</a>
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 show-grid">
+                            <div ng-controller="pagedDemoCtrl">
+
+</div>
+                        </div>
+                        <div class="col-md-6" ng-non-bindable>
+                            <h3>Description</h3>
+
+<p>Transforms an array into a smaller array of paged items.</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row code">
+                        <div class="col-md-12" ng-controller="PlunkerCtrl">
+                            <!--<div class="pull-right">-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.paged')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--</div>-->
+                            <tabset>
+                                <tab heading="Markup">
+                                    <div plunker-content="markup">
+                                        <pre ng-non-bindable><code data-language="html">&lt;div ng-controller=&quot;pagedDemoCtrl&quot;&gt;
+
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </tab>
+                                <tab heading="JavaScript">
+                                    <div plunker-content="javascript">
+                                        <pre ng-non-bindable><code data-language="javascript">function pagedDemoCtrl($scope) {
+}
+</code></pre>
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </section>
+                <script>function pagedDemoCtrl($scope) {
 }
 </script>
                 
                 <section id="filters.prettyDate">
                     <div class="page-header">
-                        <h1>Pretty Date<small>
-                            (<a target="_blank" href="https://github.com/ebertsch/Angular-Ally/tree/master/src/filters.prettyDate">nga.filters.prettyDate</a>)
-                        </small></h1>
+
+                        <h1>
+                            <small>(filter) </small>
+                            Pretty Date
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.prettyDate"> in ngOst.filters.prettyDate</a>
+                            </small>
+                        </h1>
                     </div>
                     <div class="row">
                         <div class="col-md-6 show-grid">
@@ -223,7 +491,7 @@
     </tr>
 </table>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" ng-non-bindable>
                             <p>Used to provide pretty dates to users based up a UTC Date Time</p>
                         </div>
                     </div>
@@ -231,7 +499,7 @@
                     <div class="row code">
                         <div class="col-md-12" ng-controller="PlunkerCtrl">
                             <!--<div class="pull-right">-->
-                                <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.0', 'filters.prettyDate')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.prettyDate')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
                             <!--</div>-->
                             <tabset>
                                 <tab heading="Markup">
@@ -266,9 +534,15 @@
                 
                 <section id="filters.stringFormat">
                     <div class="page-header">
-                        <h1>String Format<small>
-                            (<a target="_blank" href="https://github.com/ebertsch/Angular-Ally/tree/master/src/filters.stringFormat">nga.filters.stringFormat</a>)
-                        </small></h1>
+
+                        <h1>
+                            <small>(filter) </small>
+                            String Format
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.stringFormat"> in ngOst.filters.stringFormat</a>
+                            </small>
+                        </h1>
                     </div>
                     <div class="row">
                         <div class="col-md-6 show-grid">
@@ -284,7 +558,7 @@
     </tr>
 </table>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" ng-non-bindable>
                             <p>Used to provide a quick alternative to string format on the client side in tempaltes</p>
                         </div>
                     </div>
@@ -292,7 +566,7 @@
                     <div class="row code">
                         <div class="col-md-12" ng-controller="PlunkerCtrl">
                             <!--<div class="pull-right">-->
-                                <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.0', 'filters.stringFormat')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.stringFormat')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
                             <!--</div>-->
                             <tabset>
                                 <tab heading="Markup">
@@ -333,9 +607,15 @@
                 
                 <section id="filters.truncate">
                     <div class="page-header">
-                        <h1>Truncate<small>
-                            (<a target="_blank" href="https://github.com/ebertsch/Angular-Ally/tree/master/src/filters.truncate">nga.filters.truncate</a>)
-                        </small></h1>
+
+                        <h1>
+                            <small>(filter) </small>
+                            Truncate
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.truncate"> in ngOst.filters.truncate</a>
+                            </small>
+                        </h1>
                     </div>
                     <div class="row">
                         <div class="col-md-6 show-grid">
@@ -348,7 +628,7 @@
     </tr>
 </table>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" ng-non-bindable>
                             <p>Used to truncate a string to a specified length</p>
                         </div>
                     </div>
@@ -356,7 +636,7 @@
                     <div class="row code">
                         <div class="col-md-12" ng-controller="PlunkerCtrl">
                             <!--<div class="pull-right">-->
-                                <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.0', 'filters.truncate')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.truncate')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
                             <!--</div>-->
                             <tabset>
                                 <tab heading="Markup">
@@ -394,9 +674,15 @@
                 
                 <section id="filters.usPhoneNumber">
                     <div class="page-header">
-                        <h1>Us Phone Number<small>
-                            (<a target="_blank" href="https://github.com/ebertsch/Angular-Ally/tree/master/src/filters.usPhoneNumber">nga.filters.usPhoneNumber</a>)
-                        </small></h1>
+
+                        <h1>
+                            <small>(filter) </small>
+                            Us Phone Number
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.usPhoneNumber"> in ngOst.filters.usPhoneNumber</a>
+                            </small>
+                        </h1>
                     </div>
                     <div class="row">
                         <div class="col-md-6 show-grid">
@@ -409,7 +695,7 @@
     </tr>
 </table>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6" ng-non-bindable>
                             <p>Used to output a string or number into an acceptable Us Phone Number
 1(555)123-4567</p>
                         </div>
@@ -418,7 +704,7 @@
                     <div class="row code">
                         <div class="col-md-12" ng-controller="PlunkerCtrl">
                             <!--<div class="pull-right">-->
-                                <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.0', 'filters.usPhoneNumber')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.usPhoneNumber')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
                             <!--</div>-->
                             <tabset>
                                 <tab heading="Markup">
@@ -454,14 +740,95 @@
 }
 </script>
                 
+                <section id="filters.yesNo">
+                    <div class="page-header">
+
+                        <h1>
+                            <small>(filter) </small>
+                            Yes No
+                            <small>
+                                <a target="_blank"
+                                    href="https://github.com/ostusa/ng-ost/tree/master/src/filters.yesNo"> in ngOst.filters.yesNo</a>
+                            </small>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 show-grid">
+                            <table class="table table-bordered" ng-controller="yesNoDemoCtrl">
+    <tr>
+        <td>True</td>
+        <td class="text-right">False</td>
+    </tr>
+    <tr>
+        <td>{{data.value1 | yesNo}}</td>
+        <td>{{data.value2 | yesNo}}</td>
+    </tr>
+</table>
+                        </div>
+                        <div class="col-md-6" ng-non-bindable>
+                            <p>Used to provide users with human values for true and false values</p>
+
+<p>Like "Yes", "No"</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row code">
+                        <div class="col-md-12" ng-controller="PlunkerCtrl">
+                            <!--<div class="pull-right">-->
+                            <!--<button class="btn btn-info" id="plunk-btn" ng-click="edit('1.2.10', '3.0.3', '0.1.1', 'filters.yesNo')"><i class="glyphicon glyphicon-edit"></i> Edit in plunker</button>-->
+                            <!--</div>-->
+                            <tabset>
+                                <tab heading="Markup">
+                                    <div plunker-content="markup">
+                                        <pre ng-non-bindable><code data-language="html">&lt;table class=&quot;table table-bordered&quot; ng-controller=&quot;yesNoDemoCtrl&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;True&lt;/td&gt;
+        &lt;td class=&quot;text-right&quot;&gt;False&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;{{data.value1 | yesNo}}&lt;/td&gt;
+        &lt;td&gt;{{data.value2 | yesNo}}&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                                    </div>
+                                </tab>
+                                <tab heading="JavaScript">
+                                    <div plunker-content="javascript">
+                                        <pre ng-non-bindable><code data-language="javascript">function yesNoDemoCtrl($scope) {
+    $scope.data = {
+        &#x27;value1&#x27;: true,
+        &#x27;value2&#x27;: false
+    };
+}
+</code></pre>
+                                    </div>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+                </section>
+                <script>function yesNoDemoCtrl($scope) {
+    $scope.data = {
+        'value1': true,
+        'value2': false
+    };
+}
+</script>
+                
             </div>
         </div>
-    </div><!-- /.container -->
-</div><!-- /.main -->
+    </div>
+    <!-- /.container -->
+</div>
+<!-- /.main -->
 <footer class="footer">
     <div class="container">
-        <p>Designed and built by <a href="https://github.com/ebertsch" target="_blank">Ezra Bertsch</a> and <a href="https://github.com/ebertsch/Angular-Ally/graphs/contributors" target="_blank">contributors</a>.</p>
-        <p>Code licensed under <a href="https://github.com/ebertsch/Angular-Ally/master/LICENSE"> License</a>.</p>
+        <p>Designed and built by <a href="https://github.com/ostusa" target="_blank">OSTUSA</a> and <a
+                href="https://github.com/ostusa/ng-ost/graphs/contributors" target="_blank">contributors</a>.
+        </p>
+
+        <p>Code licensed under <a href="https://github.com/ostusa/ng-ost/master/LICENSE">
+            License</a>.</p>
     </div>
 </footer>
 <script src="assets/rainbow.js"></script>
@@ -469,38 +836,45 @@
 <script src="assets/rainbow-javascript.js"></script>
 <script src="assets/rainbow-html.js"></script>
 <script type="text/ng-template" id="downloadModal.html">
-    <div class="modal-header"><h4 class="modal-title">Download Angular Ally</h4></div>
+    <div class="modal-header"><h4 class="modal-title">Download ng-ost</h4></div>
     <div class="modal-body">
         <form class="form-horizontal">
             <div class="form-group">
                 <label class="col-sm-3 control-label"><strong>Build</strong></label>
+
                 <div class="col-sm-9">
               <span class="btn-group">
-                <button type="button" class="btn btn-default" ng-model="options.minified" btn-radio="true">Minified</button>
-                <button type="button" class="btn btn-default" ng-model="options.minified" btn-radio="false">Uncompressed</button>
+                <button type="button" class="btn btn-default" ng-model="options.minified" btn-radio="true">Minified
+                </button>
+                <button type="button" class="btn btn-default" ng-model="options.minified" btn-radio="false">
+                    Uncompressed
+                </button>
               </span>
-                    <small class="help-block">Use <b>Minified</b> version in your deployed application. <b>Uncompressed</b> source code is useful only for debugging and development purpose.</small>
+                    <small class="help-block">Use <b>Minified</b> version in your deployed application.
+                        <b>Uncompressed</b> source code is useful only for debugging and development purpose.
+                    </small>
                 </div>
             </div>
         </form>
     </div>
     <div class="modal-footer">
         <a class="btn btn-default" ng-click="cancel()">Close</a>
-        <a class="btn btn-primary" ng-href="{{download('0.1.0')}}" download><i class="glyphicon glyphicon-download-alt"></i> Download 0.1.0</a>
+        <a class="btn btn-primary" ng-href="{{download('0.1.1')}}" download><i
+                class="glyphicon glyphicon-download-alt"></i> Download 0.1.1</a>
     </div>
 </script>
 
 <!--<script type="text/javascript">-->
 
-    <!--var _gaq = _gaq || [];-->
-    <!--_gaq.push(['_setAccount', 'UA-37467169-1']);-->
-    <!--_gaq.push(['_trackPageview']);-->
+<!--var _gaq = _gaq || [];-->
+<!--_gaq.push(['_setAccount', 'UA-37467169-1']);-->
+<!--_gaq.push(['_trackPageview']);-->
 
-    <!--(function() {-->
-        <!--var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;-->
-        <!--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
-        <!--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);-->
-    <!--})();-->
+<!--(function() {-->
+<!--var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;-->
+<!--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
+<!--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);-->
+<!--})();-->
 
 <!--</script>-->
 <script src="assets/smoothscroll-angular-custom.js"></script>
