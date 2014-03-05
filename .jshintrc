@@ -1,0 +1,13 @@
+{
+    "curly": true,
+    "immed": true,
+    "newcap": true,
+    "noarg": true,
+    "forin": false,
+    "sub": true,
+    "boss": true,
+    "eqnull": true,
+    "globals": {
+        "angular": true
+    }
+}
